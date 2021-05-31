@@ -12,11 +12,11 @@ class Dustbin {
       this.width = 200;
       this.height = 213;
       this.thickness = 20;
-      this.image = loadImage("sprites/dustbin.png");
+      this.image = loadImage("dustbin.png");
       this.leftW = Bodies.rectangle(this.x-this.width/2, this.y-this.height/2, this.thickness, this.height, options);
       World.add(world, this.leftW);
 
-      this.rightW = Bodies.rectangle(this.x+this.width/2, this.y+this.height/2, this.thickness+20, this.height, options);
+      this.rightW = Bodies.rectangle(this.x+this.width/2, this.y-this.height/2, this.thickness, this.height, options);
       World.add(world, this.rightW);
 
       this.bottomW = Bodies.rectangle(this.x, this.y, this.width, this.thickness, options);
@@ -34,6 +34,7 @@ class Dustbin {
       rotate(this.angle);
       rectMode(CENTER);
       fill(255);
+      //rect(0, 0, 20, 213);
       pop();
 
       push();
@@ -42,6 +43,7 @@ class Dustbin {
       rotate(-1*this.angle);
       rectMode(CENTER);
       fill(255);
+      //rect(0, 0, 20, 213);
       pop();
 
       push();
@@ -52,6 +54,7 @@ class Dustbin {
       image(this.image, 0, -this.height/2, this.width, this.height);
       rectMode(CENTER);
       fill(255);
+      //rect(0, 0, 200, 20);
       pop();
       //super.display();
     }
